@@ -47,3 +47,23 @@ a, li {
   list-style: none;
   text-decoration: none;
 }
+
+
+/* container */
+.container {
+  border: 1px solid red;
+  margin: 5%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.left_container {
+  width: 65%;
+  border: 2px solid green;
+}
+
+.right_container {
+  border: 2px solid purple;
+  width: 33%;
+}
