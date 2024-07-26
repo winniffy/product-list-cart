@@ -5,6 +5,7 @@
 .desserts_header {
     font-size: 1.625rem;
     color: var(--rose900);
+    margin-bottom: 1rem;
 }
 
 .desserts_grid-container {
@@ -17,4 +18,32 @@
     "g h i"
     ;
     gap: 2rem;
+}
+
+/* .desserts_card {
+    position: relative;
+} */
+
+.desserts_img {
+    border-radius: 10px;
+    position: relative;
+}
+
+.desserts_add-btn {
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 70%;
+    display: flex;
+}
+
+
+/* mobile responsiveness */
+@media (max-width: 500px) {
+
+    .desserts_grid-container {
+        display: block;
+    }
 }

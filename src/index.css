@@ -66,4 +66,19 @@ a, li {
 .right_container {
   border: 2px solid purple;
   width: 33%;
+  /* position: fixed; */
+}
+
+
+
+/*mobile responsiveness*/
+@media (max-width: 500px) {
+  .container {
+    display: block;
+  }
+
+  .left_container,
+  .right_container {
+    width: 100%;
+  }
 }
