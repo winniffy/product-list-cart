@@ -27,6 +27,7 @@
 .desserts_img {
     border-radius: 10px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .desserts_add-btn {
@@ -35,15 +36,45 @@
     left: 0;
     right: 0;
     margin-inline: auto;
-    width: 70%;
+    width: 60%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    border: 1.2px solid var(--rose500);
+    border-radius: 30px;
+}
+
+.cart_text {
+    font-weight: 500;
+    color: var(--rose900);
+}
+
+.dessert_category {
+    font-size: .7rem;
+    color: var(--rose400);
+}
+
+.dessert_name {
+    font-size: .85rem;
+    color: var(--rose900);
+    font-weight: 500;
+}
+
+.dessert_price {
+    font-size: .85rem;
+    color: var(--red);
+    font-weight: 500;
 }
 
 
 /* mobile responsiveness */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
 
     .desserts_grid-container {
         display: block;
     }
+
+
 }
