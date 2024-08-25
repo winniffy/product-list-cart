@@ -46,6 +46,10 @@
     border-radius: 30px;
 }
 
+.inc_btn {
+    background-color: var(--red);
+}
+
 .cart_text {
     font-weight: 500;
     color: var(--rose900);

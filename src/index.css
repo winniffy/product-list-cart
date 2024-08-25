@@ -59,14 +59,16 @@ a, li {
 }
 
 .left_container {
-  width: 65%;
+  width: 63%;
   border: 2px solid green;
 }
 
 .right_container {
   border: 2px solid purple;
   width: 33%;
-  /* position: fixed; */
+  background-color: #fff;
+  /* position: fixed;
+  right: 5%; */
 }
 
 

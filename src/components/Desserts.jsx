@@ -1,8 +1,9 @@
 import DessertItem from './DessertItem'
 import './Desserts.css'
+import 'boxicons'
 
 
-const Desserts = ({products}) => {
+const Desserts = ({products, addToCart, cartItems, removeItem}) => {
 
   return (
     <div className="desserts_container">
@@ -12,7 +13,7 @@ const Desserts = ({products}) => {
                 // check if products exist and then map through products array from json file
                 products && products.map((dessert => {
                     return (
-                        <DessertItem key={dessert.id} dessert={dessert} />
+                        <DessertItem key={dessert.id} dessert={dessert} addToCart={addToCart} cartItems={cartItems} removeItem={removeItem}/>
                     )
                 }))
             }

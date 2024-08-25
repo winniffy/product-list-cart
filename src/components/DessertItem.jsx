@@ -1,8 +1,10 @@
 import './Desserts.css';
-import cart from '/images/icon-add-to-cart.svg';
+import cartIcon from '/images/icon-add-to-cart.svg';
+// import decreaseIcon from '/images/icon-decrement-quantity.svg';
+// import increaseIcon from '/images/icon-increment-quantity.svg';
 
-const DessertItem = ({dessert}) => {
-    
+const DessertItem = ({dessert, addToCart, cartItems, removeItem}) => {
+
     // card image background style 
     const dessertCardImage = {
         backgroundImage: `url(${dessert.image.desktop})`,
@@ -12,15 +14,32 @@ const DessertItem = ({dessert}) => {
         height: '250px',
     }
 
+    const dessertBorder = {
+        border: '2px solid var(--red)'
+    }
+
+    const checkIfItemExists = cartItems.some((item) => item.id === dessert.id);
+
   return (
     <aside className='desserts_card' key={dessert.id}>
-        {/* <img className='desserts_img' src={dessert.image.desktop} alt={`${dessert.name} image`} /> */}
-        <div className='desserts_img' style={dessertCardImage}>
+        <div className='desserts_img' style={{...dessertCardImage, ...checkIfItemExists ? dessertBorder : ''}}>
             {/* add to cart button */}
-            <button className="desserts_add-btn">
-                <img src={cart} alt="cart icon" className="cart_icon" />
-                <p className="cart_text">Add to Cart</p>
-            </button>
+            { checkIfItemExists ?
+            (<div className="desserts_add-btn inc_btn">
+                <box-icon name='minus' onClick={() => removeItem(dessert.id)}></box-icon>
+                <box-icon name='plus' onClick={() => addToCart(dessert)} ></box-icon>
+                {/* <button onClick={() => removeItem(dessert.id)} > <img src={decreaseIcon} alt="decrease" /> </button>
+                <button onClick={() => addToCart(dessert)} > <img src={increaseIcon} alt="increase" /> </button> */}
+            </div>)
+            : (
+                // <div className="desserts_img">
+                <button className="desserts_add-btn" onClick={() => addToCart(dessert)}>
+                    <img src={cartIcon} alt="cart icon" className="cart_icon" />
+                    <p className="cart_text">Add to Cart</p>
+                </button>
+                // </div>
+                )
+            }
         </div>
         
         {/* dessert card sub text */}
