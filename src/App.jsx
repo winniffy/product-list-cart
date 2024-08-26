@@ -25,6 +25,12 @@ function reducer(state, action) {
       )
       .filter((item) => item.quantity > 0);
 
+      case "clear":
+        return state.map((item) =>
+          item.id === action.payload.id ? {...item, quantity: item.quantity > 1 ? item.quantity = 0 : '' } : item
+        )
+        .filter((item) => item.quantity > 0);
+
     default:
       return state;
   }
@@ -47,6 +53,10 @@ function App() {
 
   function removeItem (dessertID) {
     dispatch({type: "remove", payload: {id: dessertID}})
+  };
+
+  function clearItem (dessertID) {
+    dispatch({type: "clear", payload: {id: dessertID}})
   };
 
   // cart total
@@ -72,7 +82,7 @@ function App() {
 
         {/* right section */}
         <section className="right_container">
-          <Cart cartItems={cartItems} removeItem={removeItem} totalAmount={totalAmount} />
+          <Cart cartItems={cartItems} clearItem={clearItem} totalAmount={totalAmount} />
         </section>
         
       </div>

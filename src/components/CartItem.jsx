@@ -2,7 +2,7 @@ import removeIcon from '/images/icon-remove-item.svg';
 import './Cart.css';
 
 
-const CartItem = ({item, removeItem}) => {
+const CartItem = ({item, clearItem}) => {
 
     const itemTotalAmount = `$${(item.quantity * item.price).toFixed(2)}`;
 
@@ -12,7 +12,7 @@ const CartItem = ({item, removeItem}) => {
         <p className="cart_item-price">{`$${item.price.toFixed(2)}`}</p>
         <p>{item.quantity}</p>
         <p>{itemTotalAmount}</p>
-        <button onClick={(item) => removeItem(item.id)}>
+        <button onClick={() => clearItem(item.id)}>
             <img src={removeIcon} alt="remove item icon" />
         </button>
     </div>
