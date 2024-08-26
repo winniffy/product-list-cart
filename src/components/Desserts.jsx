@@ -1,6 +1,5 @@
 import DessertItem from './DessertItem'
 import './Desserts.css'
-import 'boxicons'
 
 
 const Desserts = ({products, addToCart, cartItems, removeItem}) => {

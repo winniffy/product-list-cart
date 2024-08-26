@@ -14,7 +14,7 @@ const Cart = ({cartItems, removeItem, totalAmount}) => {
                 </>
             ) : (
                 cartItems.map((item) => {
-                    console.log(cartItems)
+                    // console.log(cartItems)
                     return (
                         <CartItem key={item.id} item={item} removeItem={removeItem} />
                     )

@@ -1,7 +1,6 @@
 import './Desserts.css';
 import cartIcon from '/images/icon-add-to-cart.svg';
-// import decreaseIcon from '/images/icon-decrement-quantity.svg';
-// import increaseIcon from '/images/icon-increment-quantity.svg';
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const DessertItem = ({dessert, addToCart, cartItems, removeItem}) => {
 
@@ -20,24 +19,33 @@ const DessertItem = ({dessert, addToCart, cartItems, removeItem}) => {
 
     const checkIfItemExists = cartItems.some((item) => item.id === dessert.id);
 
+    const itemQuantity = cartItems.map((item) => {
+        if(item.id === dessert.id) return item.quantity;
+    })
+
   return (
     <aside className='desserts_card' key={dessert.id}>
         <div className='desserts_img' style={{...dessertCardImage, ...checkIfItemExists ? dessertBorder : ''}}>
             {/* add to cart button */}
             { checkIfItemExists ?
             (<div className="desserts_add-btn inc_btn">
-                <box-icon name='minus' onClick={() => removeItem(dessert.id)}></box-icon>
-                <box-icon name='plus' onClick={() => addToCart(dessert)} ></box-icon>
-                {/* <button onClick={() => removeItem(dessert.id)} > <img src={decreaseIcon} alt="decrease" /> </button>
-                <button onClick={() => addToCart(dessert)} > <img src={increaseIcon} alt="increase" /> </button> */}
+
+                <button className="cart_btn remove_btn" onClick={() => removeItem(dessert.id)}>
+                    <FaMinus className='icon' />
+                </button>
+
+                <p className="item_quantity">{itemQuantity}</p>
+
+                <button className="cart_btn add_btn" onClick={() => addToCart(dessert)}>
+                    <FaPlus className='icon' />
+                </button>
             </div>)
             : (
-                // <div className="desserts_img">
                 <button className="desserts_add-btn" onClick={() => addToCart(dessert)}>
                     <img src={cartIcon} alt="cart icon" className="cart_icon" />
                     <p className="cart_text">Add to Cart</p>
                 </button>
-                // </div>
+
                 )
             }
         </div>
