@@ -28,15 +28,15 @@ const DessertItem = ({dessert, addToCart, cartItems, removeItem}) => {
         <div className='desserts_img' style={{...dessertCardImage, ...checkIfItemExists ? dessertBorder : ''}}>
             {/* add to cart button */}
             { checkIfItemExists ?
-            (<div className="desserts_add-btn inc_btn">
+            (<div className="desserts_add-btn desserts_add-btn_active">
 
-                <button className="cart_btn remove_btn" onClick={() => removeItem(dessert.id)}>
+                <button className="cart_btn" onClick={() => removeItem(dessert.id)}>
                     <FaMinus className='icon' />
                 </button>
 
                 <p className="item_quantity">{itemQuantity}</p>
 
-                <button className="cart_btn add_btn" onClick={() => addToCart(dessert)}>
+                <button className="cart_btn" onClick={() => addToCart(dessert)}>
                     <FaPlus className='icon' />
                 </button>
             </div>)
