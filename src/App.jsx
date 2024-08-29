@@ -1,8 +1,8 @@
-import { useEffect, useReducer } from 'react'
-import './variables.css'
-import Products from './data.json'
-import Desserts from './components/Desserts'
-import Cart from './components/Cart'
+import { useEffect, useReducer } from 'react';
+import './variables.css';
+import Products from './data.json';
+import Desserts from './components/Desserts';
+import Cart from './components/Cart';
 
 // reducer
 function reducer(state, action) {
