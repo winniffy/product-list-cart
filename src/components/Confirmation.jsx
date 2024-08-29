@@ -4,7 +4,12 @@ import './Confirmation.css';
 import products from '../data.json';
 
 
-const Confirmation = ({cartItems, toggleConfirmationModal}) => {
+const Confirmation = ({cartItems, toggleConfirmationModal, resetApp}) => {
+
+    function resetAll() {
+        toggleConfirmationModal();
+        resetApp();
+    }
     
   return (
     <section className='confirm_overlay'>
@@ -15,7 +20,7 @@ const Confirmation = ({cartItems, toggleConfirmationModal}) => {
             <ConfirmCart key={item.id} item={item} products={products} />
             )
         }
-        <button onClick={toggleConfirmationModal}  >
+        <button onClick={resetAll} >
             Start New Order
         </button>
         </div>

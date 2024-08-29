@@ -5,7 +5,7 @@ import './Cart.css';
 import Confirmation from "./Confirmation";
 import { useState } from "react";
 
-const Cart = ({cartItems, clearItem, totalAmount}) => {
+const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
 
     const [showConfirm, setShowConfirm] = useState(false);
 
@@ -48,7 +48,7 @@ const Cart = ({cartItems, clearItem, totalAmount}) => {
 
         
                     { showConfirm && (
-                        <Confirmation cartItems={cartItems} toggleConfirmationModal={toggleConfirmationModal} />
+                        <Confirmation cartItems={cartItems} toggleConfirmationModal={toggleConfirmationModal} resetApp={resetApp} />
                     ) } 
                 </>
         

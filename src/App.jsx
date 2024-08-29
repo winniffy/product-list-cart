@@ -30,6 +30,9 @@ function reducer(state, action) {
           item.id === action.payload.id ? {...item, quantity: item.quantity > 1 ? item.quantity = 0 : '' } : item
         )
         .filter((item) => item.quantity > 0);
+      
+      case "reset":
+        return [];
 
     default:
       return state;
@@ -59,6 +62,11 @@ function App() {
     dispatch({type: "clear", payload: {id: dessertID}})
   };
 
+  function resetApp () {
+    dispatch({type: "reset"});
+    localStorage.removeItem('cartItems');
+  };
+
   // cart total
   const totalAmount = cartItems.reduce((total, item) => {
     return total + item.price * item.quantity
@@ -82,7 +90,7 @@ function App() {
 
         {/* right section */}
         <section className="right_container">
-          <Cart cartItems={cartItems} clearItem={clearItem} totalAmount={totalAmount} />
+          <Cart cartItems={cartItems} clearItem={clearItem} totalAmount={totalAmount} resetApp={resetApp} />
         </section>
         
       </div>
