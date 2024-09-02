@@ -52,8 +52,8 @@ a, li {
 
 /* container */
 .container {
-  border: 1px solid red;
-  margin: 5%;
+  /* border: 1px solid red; */
+  margin: 5% 6%;
   display: flex;
   /* align-items: center; */
   justify-content: space-between;
@@ -61,13 +61,13 @@ a, li {
 
 .left_container {
   width: 63%;
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 .right_container {
-  border: 2px solid purple;
-  width: 33%;
-  background-color: #fff;
+  /* border: 2px solid purple; */
+  width: 30%;
+  /* background-color: #fff; */
   /* position: fixed;
   right: 5%; */
 }

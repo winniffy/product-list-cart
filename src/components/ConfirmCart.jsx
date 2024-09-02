@@ -1,4 +1,5 @@
-import './Cart.css';
+import './Confirmation.css';
+
 
 const ConfirmCart = ({item, products}) => {
 
@@ -7,8 +8,6 @@ const ConfirmCart = ({item, products}) => {
     const productID = products.find((product) => product.id === item.id);
 
     const dessertImg = productID ? productID.image.thumbnail : '';
-
-    // console.log(dessertImg)
 
     // card image background style 
     const dessertCardImage = {
@@ -22,7 +21,7 @@ const ConfirmCart = ({item, products}) => {
   return (
     <div className='confirm-cart_item-container'>
         <div className='desserts_img-thumbnail' style={dessertCardImage}></div>
-        <article className='confirm-cart_inner-flex' >
+        <article className='confirm-cart_inner-flex'>
             <p className='confirm-cart_item-name'>{item.name}</p>
             <aside className='confirm-cart_inner-flex_bottom' >
                 <p className="confirm-cart_item-price">{`$${item.price.toFixed(2)}`}</p>
@@ -31,7 +30,7 @@ const ConfirmCart = ({item, products}) => {
         </article>
         <p>{itemTotalAmount}</p>
     </div>
-  )
+)
 }
 
 export default ConfirmCart

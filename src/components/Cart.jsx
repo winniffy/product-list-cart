@@ -7,24 +7,29 @@ import { useState } from "react";
 
 const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
 
+    // confirmation modal state
     const [showConfirm, setShowConfirm] = useState(false);
 
+    // confirmation modal function
     function toggleConfirmationModal() {
         setShowConfirm(!showConfirm)
     }
 
   return (
-    <div>
-        <h2>Your Cart ({cartItems.length})</h2>
+    <div className="cart_container">
+        <h2 className="cart_container-header">Your Cart ({cartItems.length})</h2>
+        
+        {/* show empty cart illustration */}
         {
             cartItems.length === 0 ? (
-                <>
+                <article className="cart_container-empty">
                     <img src={emptyIllustration} alt="empty illustration image" />
-                    <p>Your added items will appear here</p>
-                </>
+                    <p className="cart_container-empty_text">Your added items will appear here</p>
+                </article>
             ) : (
+
+                // show cart items
                 cartItems.map((item) => {
-                    // console.log(cartItems)
                     return (
                         <CartItem key={item.id} item={item} clearItem={clearItem} />
                     )
@@ -35,11 +40,14 @@ const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
         {
             cartItems.length === 0 ? '' : (
                 <>
-                    <h2>{`$${totalAmount.toFixed(2)}`}</h2>
+                    <span className="total_flex">
+                        <p className="total_text">Order Total</p>
+                        <h2 className="total_amount">{`$${totalAmount.toFixed(2)}`}</h2>
+                    </span>
 
                     <article className="carbon_neutral">
                         <img src={carbonNeutralIcon} alt="carbon neutral icon" />
-                        <p className="carbon_text">This is a carbon-neutral delivery</p>
+                        <p className="carbon_text">This is a <span className="carbon_text-bold">carbon-neutral</span> delivery </p>
                     </article>
 
                     <button className="confirm_btn" onClick={toggleConfirmationModal} >
