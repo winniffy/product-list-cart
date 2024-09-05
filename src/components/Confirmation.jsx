@@ -13,7 +13,7 @@ const Confirmation = ({cartItems, toggleConfirmationModal, resetApp, totalAmount
     }
     
   return (
-    <section className='confirm_overlay'>
+    <section className='confirm_overlay' onClick={toggleConfirmationModal} >
         <div className="confirm_box">
             <img src={confirmedIcon} alt="confirmed icon" className='confirm_icon' />
             <h2 className='confirm_header'>Order Confirmed</h2>
