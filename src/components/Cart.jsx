@@ -56,7 +56,7 @@ const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
 
         
                     { showConfirm && (
-                        <Confirmation cartItems={cartItems} toggleConfirmationModal={toggleConfirmationModal} resetApp={resetApp} />
+                        <Confirmation cartItems={cartItems} toggleConfirmationModal={toggleConfirmationModal} resetApp={resetApp} totalAmount={totalAmount} />
                     ) } 
                 </>
         

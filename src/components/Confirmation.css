@@ -16,12 +16,29 @@
     z-index: 100;
     min-width: 500px;
     margin: auto;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2.5rem 2rem;
+}
+
+.confirm_icon {
+    width: 40px;
+    margin-bottom: .85rem;
+}
+
+.confirm_header {
+    font-size: 1.825rem;
+    color: var(--rose900);
+}
+
+.confirm_subtext {
+    font-size: .7rem;
+    color: var(--rose300);
+    font-weight: 550;
+    margin-bottom: 1.8rem;
 }
 
 .confirm_cart-bg {
     background-color: var(--rose50);
-    padding: 1rem;
+    padding: .85rem 1.5rem;
     border-radius: 8px;
 }
 
@@ -33,13 +50,78 @@
     padding-block: 1rem;
 }
 
+.confirm-cart_item-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .desserts_img-thumbnail {
     border-radius: 5px;
     width: 50px;
 }
 
+.confirm_font-size {
+    font-size: 0.875rem;
+}
+
 .confirm-cart_inner-flex_bottom {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+}
+
+.confirm-cart_item-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--rose900);
+}
+
+.confirm-cart_item-quantity {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.confirm-cart_item-price {
+    color: var(--rose500)
+}
+
+.confirm-cart_item-total {
+    color: var(--rose500);
+    font-weight: 500;
+}
+
+
+.confirm-total_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .8rem;
+}
+
+.confirm-total_text {
+    font-size: .8rem;
+    color: var(--rose500);
+    font-weight: 550;
+}
+
+.confirm-total_amount {
+    font-size: 1.25rem;
+    color: var(--rose900);
+}
+
+
+.confirm_start-btn {
+    background-color: var(--red);
+    margin-top: 1.5rem;
+    color: #fff;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: 600;
+    padding-block: .9rem;
+    transition: .2s all ease-in-out;
+}
+
+.confirm_start-btn:hover {
+    background-color: rgb(136, 9, 0);
 }
