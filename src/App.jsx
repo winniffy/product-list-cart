@@ -3,11 +3,13 @@ import './variables.css';
 import Products from './data.json';
 import Desserts from './components/Desserts';
 import Cart from './components/Cart';
+import { motion } from "framer-motion";
 
 // reducer
 function reducer(state, action) {
   switch (action.type) {
 
+    // add item to cart
     case "add":
       // check if item exists
       const existingItem = state.find((item) => item.id === action.payload.id);
@@ -19,20 +21,23 @@ function reducer(state, action) {
         return [...state, {...action.payload, quantity: 1}];
       };
 
+    // remove item from cart
     case "remove":
       return state.map((item) =>
         item.id === action.payload.id ? {...item, quantity: item.quantity - 1} : item
       )
       .filter((item) => item.quantity > 0);
 
-      case "clear":
-        return state.map((item) =>
-          item.id === action.payload.id ? {...item, quantity: item.quantity > 1 ? item.quantity = 0 : '' } : item
-        )
-        .filter((item) => item.quantity > 0);
-      
-      case "reset":
-        return [];
+    // clear all items of a dessert from cart
+    case "clear":
+      return state.map((item) =>
+        item.id === action.payload.id ? {...item, quantity: item.quantity > 1 ? item.quantity = 0 : '' } : item
+      )
+      .filter((item) => item.quantity > 0);
+    
+    // reset cart/app
+    case "reset":
+      return [];
 
     default:
       return state;
@@ -81,7 +86,12 @@ function App() {
   return (
     <>
     {/* container */}
-      <div className='container'>
+      <motion.div
+        className='container'
+        initial={{ y: -100, opacity: 0.5}}
+        animate={{ y: 0, opacity: 1}}
+        transition={{ type: "spring", stiffness: 100 }}
+      >
 
         {/* left section */}
         <section className="left_container">
@@ -93,7 +103,7 @@ function App() {
           <Cart cartItems={cartItems} clearItem={clearItem} totalAmount={totalAmount} resetApp={resetApp} />
         </section>
         
-      </div>
+      </motion.div>
     </>
   )
 }
