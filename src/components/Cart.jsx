@@ -3,7 +3,7 @@ import emptyIllustration from "/images/illustration-empty-cart.svg"
 import carbonNeutralIcon from "/images/icon-carbon-neutral.svg";
 import './Cart.css';
 import Confirmation from "./Confirmation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
 
@@ -12,7 +12,8 @@ const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
 
     // confirmation modal function
     function toggleConfirmationModal() {
-        setShowConfirm(!showConfirm)
+        setShowConfirm(prevState => !prevState)
+        // console.log(showConfirm)
     }
 
   return (
