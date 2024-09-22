@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/winniffy/product-list-cart)
-- Live Site URL: [Add live site URL here](https://product-list-cart-phi.vercel.app)
+- Solution URL: [https://github.com/winniffy/product-list-cart]
+- Live Site URL: [https://product-list-cart-phi.vercel.app]
 
 ## My process
 
