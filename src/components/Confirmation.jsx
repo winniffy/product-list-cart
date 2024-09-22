@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ConfirmCart from './ConfirmCart';
 import './Confirmation.css';
 import confirmedIcon from '/images/icon-order-confirmed.svg';

@@ -1,9 +1,9 @@
-.desserts_container {
-    /* background-color: black; */
-}
+/* .desserts_container {
+    background-color: black;
+} */
 
 .desserts_header {
-    font-size: 1.825rem;
+    font-size: 2.5rem;
     color: var(--rose900);
     margin-bottom: 1rem;
 }
@@ -19,10 +19,6 @@
     ;
     gap: 2rem;
 }
-
-/* .desserts_card {
-    position: relative;
-} */
 
 .desserts_img {
     border-radius: 10px;
@@ -110,6 +106,14 @@
 
     .desserts_grid-container {
         display: block;
+    }
+
+    .desserts_card {
+        margin-bottom: 2.5rem;
+    }
+
+    .desserts_add-btn {
+        width: 50%;
     }
 
 

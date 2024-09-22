@@ -126,3 +126,31 @@
 .confirm_start-btn:hover {
     background-color: rgb(136, 9, 0);
 }
+
+
+
+
+@media (max-width: 768px) {
+    .confirm_overlay {
+        inset: 0;
+    }
+
+    .confirm_box {
+        min-width: auto;
+        margin: 0;
+        margin-top: auto;
+    }
+
+    .confirm_header {
+        font-size: 2.5rem;
+        line-height: 1.25;
+        font-weight: 900;
+    }
+
+    .confirm-cart_item-name {
+        width: 155px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

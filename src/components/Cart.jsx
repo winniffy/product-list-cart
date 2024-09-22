@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import CartItem from "./CartItem"
 import emptyIllustration from "/images/illustration-empty-cart.svg"
 import carbonNeutralIcon from "/images/icon-carbon-neutral.svg";
 import './Cart.css';
 import Confirmation from "./Confirmation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
 
@@ -12,7 +13,7 @@ const Cart = ({cartItems, clearItem, totalAmount, resetApp}) => {
 
     // confirmation modal function
     function toggleConfirmationModal() {
-        setShowConfirm(prevState => !prevState)
+        setShowConfirm(!showConfirm)
         // console.log(showConfirm)
     }
 
