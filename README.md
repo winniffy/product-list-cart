@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/screenshot.png)
+![](https://github.com/winniffy/product-list-cart/blob/main/public/screenshot.png)
 
 ### Links
 
